@@ -52,7 +52,7 @@ fun SignUpScren(){
                 }, label = "",
                 color = Color(0xFF464646))
 
-            HealthAppButton(text = "Save Data",
+            HealthAppButton(text = "Save User",
                 onButClick = {
                              /*TODO*/
                              },

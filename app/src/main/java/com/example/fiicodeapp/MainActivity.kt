@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.fiicodeapp.features.presentation.screens.SignUpScren
+import com.example.fiicodeapp.features.presentation.screens.ProductsScreen
 import com.example.fiicodeapp.ui.theme.FIICodeAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FIICodeAppTheme {
-                SignUpScren()
+                ProductsScreen()
             }
         }
     }
