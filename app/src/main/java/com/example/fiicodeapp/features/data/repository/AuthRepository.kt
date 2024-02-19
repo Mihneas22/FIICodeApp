@@ -1,6 +1,7 @@
 package com.example.fiicodeapp.features.data.repository
 
 import com.example.fiicodeapp.features.data.util.Resource
+import com.example.fiicodeapp.features.domain.models.CurrentUser
 import com.example.fiicodeapp.features.domain.models.User
 import io.realm.kotlin.types.RealmList
 import kotlinx.coroutines.flow.Flow
@@ -8,7 +9,9 @@ import kotlinx.coroutines.flow.Flow
 interface AuthRepository {
     val getUsers: Flow<RealmList<User>>
 
-    suspend fun loginIn(email: String, password: String): Resource<Boolean>
+    suspend fun getCurrentUser(list: RealmList<User>, username: String): CurrentUser
 
-    suspend fun signUp(email: String,password: String): Resource<Boolean>
+    suspend fun loginIn(list: RealmList<User>,username: String, password: String): Resource<Boolean>
+
+    suspend fun signUp(username: String,password: String): Resource<Boolean>
 }
