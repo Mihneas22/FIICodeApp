@@ -1,5 +1,6 @@
 package com.example.fiicodeapp.features.presentation.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.fiicodeapp.features.data.repository.ProductRepository
@@ -8,7 +9,7 @@ import com.example.fiicodeapp.features.domain.models_test.Product
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
@@ -21,7 +22,7 @@ class ProductsViewModel @Inject constructor(
 ): ViewModel() {
 
     private val _products = MutableStateFlow<List<Product>>(emptyList())
-    val products: StateFlow<List<Product>> = _products
+    val products =_products.asStateFlow()
 
     private val _showErrorToastChannel = Channel<Boolean>()
     val showErrorToastChannel = _showErrorToastChannel.receiveAsFlow()
@@ -35,13 +36,13 @@ class ProductsViewModel @Inject constructor(
                     }
 
                     is Resource.Succes ->{
-                        result.result?.let { products->
+                        result.result?.let {products ->
                             _products.update { products }
                         }
                     }
 
                     is Resource.Loading ->{
-
+                        Log.d("Loading","Loading List")
                     }
                 }
 
