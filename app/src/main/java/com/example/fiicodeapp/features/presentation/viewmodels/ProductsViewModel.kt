@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.fiicodeapp.features.data.repository.ProductRepository
 import com.example.fiicodeapp.features.data.util.Resource
-import com.example.fiicodeapp.features.domain.models.Product
+import com.example.fiicodeapp.features.domain.models_test.Product
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow

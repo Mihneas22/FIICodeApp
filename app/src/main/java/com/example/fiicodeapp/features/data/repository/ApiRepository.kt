@@ -1,6 +1,6 @@
 package com.example.fiicodeapp.features.data.repository
 
-import com.example.fiicodeapp.features.domain.models.Products
+import com.example.fiicodeapp.features.domain.models_test.Products
 import retrofit2.http.GET
 
 interface ApiRepository {

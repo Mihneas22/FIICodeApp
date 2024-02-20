@@ -3,7 +3,7 @@ package com.example.fiicodeapp.features.domain.repository
 import com.example.fiicodeapp.features.data.repository.ApiRepository
 import com.example.fiicodeapp.features.data.repository.ProductRepository
 import com.example.fiicodeapp.features.data.util.Resource
-import com.example.fiicodeapp.features.domain.models.Product
+import com.example.fiicodeapp.features.domain.models_test.Product
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import java.io.IOException

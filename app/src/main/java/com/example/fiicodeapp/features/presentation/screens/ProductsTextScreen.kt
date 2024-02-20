@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.fiicodeapp.features.domain.models.Product
+import com.example.fiicodeapp.features.domain.models_test.Product
 import com.example.fiicodeapp.features.presentation.viewmodels.ProductsViewModel
 import kotlinx.coroutines.flow.collectLatest
 
@@ -52,7 +52,7 @@ fun ProductsScreen(
 
 @Composable
 fun ProductIt(product: Product) {
-    val ingredient = product.ingredients[0]
+    val ingredient = product.product_name
 
     Column(modifier = Modifier
         .height(300.dp)
