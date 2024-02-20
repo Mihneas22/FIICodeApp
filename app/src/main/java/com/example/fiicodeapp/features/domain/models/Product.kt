@@ -1,5 +1,6 @@
 package com.example.fiicodeapp.features.domain.models
 
+import com.example.fiicodeapp.features.domain.models_test.Nutriments
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
