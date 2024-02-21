@@ -21,6 +21,7 @@ object AppModule {
                 schema = setOf(
                     User::class
                 )
-            ))
+            )
+        )
     )
 }
