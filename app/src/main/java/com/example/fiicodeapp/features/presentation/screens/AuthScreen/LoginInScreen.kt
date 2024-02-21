@@ -1,4 +1,4 @@
-package com.example.fiicodeapp.features.presentation.screens
+package com.example.fiicodeapp.features.presentation.screens.AuthScreen
 
 import android.util.Log
 import android.widget.Toast
@@ -119,7 +119,7 @@ fun LoginInScreen(
                         createUserViewModel.getCurrentUser(list,username.value)
                         val result = createUserViewModel.getUser.value
                         Log.d("CurrentUser","userData: $result")
-                        navController.navigate("ProfileScreen")
+                        navController.navigate("HomeScreen")
                     }
                     else{
                         Toast.makeText(context,"Invalid username or password!", Toast.LENGTH_SHORT).show()

@@ -67,4 +67,12 @@ class AuthRepositoryIMPL @Inject constructor(
     }catch (ex: Exception){
         Resource.Failure(ex)
     }
+
+    override suspend fun logOut(user: CurrentUser): CurrentUser {
+        user.id=""
+        user.username=""
+        user.password=""
+
+        return user
+    }
 }

@@ -35,6 +35,12 @@ class CreateUserViewModel @Inject constructor(
         val result = repository.getCurrentUser(list, username)
         getUser.value = result
     }
+
+    fun logOut(user: CurrentUser)
+    =viewModelScope.launch{
+        getUser.value = repository.logOut(getUser.value)
+    }
+
     fun updateUserData(user: CurrentUser){
         getUser.value = user
     }

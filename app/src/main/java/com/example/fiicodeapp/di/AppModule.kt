@@ -13,7 +13,6 @@ import io.realm.kotlin.RealmConfiguration
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-
     @Provides
     fun provideAuthRepository(): AuthRepository = AuthRepositoryIMPL(
         realm = Realm.open(

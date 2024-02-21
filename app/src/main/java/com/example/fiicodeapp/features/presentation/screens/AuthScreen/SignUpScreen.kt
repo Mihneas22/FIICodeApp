@@ -1,4 +1,4 @@
-package com.example.fiicodeapp.features.presentation.screens
+package com.example.fiicodeapp.features.presentation.screens.AuthScreen
 
 import android.widget.Toast
 import androidx.compose.foundation.Image

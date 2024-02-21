@@ -18,13 +18,12 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
-@Preview
 @Composable
 fun HomeScreen(
-    
+    navController: NavController
 ){
     Column(modifier = Modifier.fillMaxSize()) {
         Surface(modifier = Modifier
@@ -49,7 +48,7 @@ fun HomeScreen(
                         .padding(start = 10.dp)
                         .size(50.dp)
                         .clickable {
-                            TODO()
+                            navController.navigate("ProfileScreen")
                         }
                 )
 

@@ -14,4 +14,6 @@ interface AuthRepository {
     suspend fun loginIn(list: RealmList<User>,username: String, password: String): Resource<Boolean>
 
     suspend fun signUp(username: String,password: String): Resource<Boolean>
+
+    suspend fun logOut(user: CurrentUser): CurrentUser
 }
