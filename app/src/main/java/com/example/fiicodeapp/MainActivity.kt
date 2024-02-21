@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.fiicodeapp.features.presentation.screens.HomeScreen
+import com.example.fiicodeapp.features.presentation.screens.LoginInScreen
 import com.example.fiicodeapp.features.presentation.screens.SignUpScreen
 import com.example.fiicodeapp.ui.theme.FIICodeAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,6 +28,10 @@ class MainActivity : ComponentActivity() {
 
                     composable("HomeScreen"){
                         HomeScreen()
+                    }
+                    
+                    composable("LoginInScreen"){
+                        LoginInScreen(navController = navController)
                     }
                 }
             }
