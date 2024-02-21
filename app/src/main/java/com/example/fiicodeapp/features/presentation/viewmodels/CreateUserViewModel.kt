@@ -3,7 +3,7 @@ package com.example.fiicodeapp.features.presentation.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.fiicodeapp.features.data.repository.AuthRepository
-import com.example.fiicodeapp.features.domain.models.CurrentUser
+import com.example.fiicodeapp.features.domain.models.InAppUser.CurrentUser
 import com.example.fiicodeapp.features.domain.models.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.realm.kotlin.ext.realmListOf

@@ -3,7 +3,7 @@ package com.example.fiicodeapp.features.domain.repository
 import androidx.compose.runtime.mutableStateOf
 import com.example.fiicodeapp.features.data.repository.AuthRepository
 import com.example.fiicodeapp.features.data.util.Resource
-import com.example.fiicodeapp.features.domain.models.CurrentUser
+import com.example.fiicodeapp.features.domain.models.InAppUser.CurrentUser
 import com.example.fiicodeapp.features.domain.models.User
 import io.realm.kotlin.Realm
 import io.realm.kotlin.UpdatePolicy

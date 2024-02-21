@@ -8,4 +8,5 @@ class User: RealmObject {
     @PrimaryKey var _id: ObjectId = ObjectId()
     var username: String = ""
     var password: String = ""
+    var allergens: Allergens? = null
 }

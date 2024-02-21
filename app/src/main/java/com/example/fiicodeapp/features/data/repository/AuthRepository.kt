@@ -1,7 +1,7 @@
 package com.example.fiicodeapp.features.data.repository
 
 import com.example.fiicodeapp.features.data.util.Resource
-import com.example.fiicodeapp.features.domain.models.CurrentUser
+import com.example.fiicodeapp.features.domain.models.InAppUser.CurrentUser
 import com.example.fiicodeapp.features.domain.models.User
 import io.realm.kotlin.types.RealmList
 import kotlinx.coroutines.flow.Flow

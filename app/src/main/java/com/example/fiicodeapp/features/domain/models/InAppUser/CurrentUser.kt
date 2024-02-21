@@ -1,4 +1,4 @@
-package com.example.fiicodeapp.features.domain.models
+package com.example.fiicodeapp.features.domain.models.InAppUser
 
 data class CurrentUser(
     var id: String = "",
