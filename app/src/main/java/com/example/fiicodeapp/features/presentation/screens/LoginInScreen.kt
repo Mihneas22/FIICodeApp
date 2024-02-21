@@ -112,7 +112,7 @@ fun LoginInScreen(
 
                     if(result==Resource.Succes(true)){
                         loginInViewModel.getCurrentUser(list,username.value)
-                        navController.navigate("HomeScreen")
+                        navController.navigate("MainScreen")
                     }
                     else{
                         Toast.makeText(context,"Invalid username or password!", Toast.LENGTH_SHORT).show()

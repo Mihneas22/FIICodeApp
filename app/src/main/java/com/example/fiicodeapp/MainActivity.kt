@@ -1,8 +1,10 @@
 package com.example.fiicodeapp
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresExtension
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
@@ -10,12 +12,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.fiicodeapp.features.presentation.screens.HomeScreen
 import com.example.fiicodeapp.features.presentation.screens.LoginInScreen
+import com.example.fiicodeapp.features.presentation.screens.MainScreen
 import com.example.fiicodeapp.features.presentation.screens.SignUpScreen
 import com.example.fiicodeapp.ui.theme.FIICodeAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -32,6 +36,10 @@ class MainActivity : ComponentActivity() {
                     
                     composable("LoginInScreen"){
                         LoginInScreen(navController = navController)
+                    }
+
+                    composable("ProductsScreen"){
+                        MainScreen()
                     }
                 }
             }
