@@ -9,7 +9,7 @@ import com.example.fiicodeapp.features.domain.repository.ProductRepositoryIMPL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ActivityComponent
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import okhttp3.OkHttpClient
@@ -18,7 +18,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ActivityComponent::class)
 object AppModule {
 
     @Provides
@@ -40,13 +40,15 @@ object AppModule {
         .addInterceptor(interceptor)
         .build()
 
-    @Provides
-    fun provideProductsRepository(): ProductsRepository = ProductRepositoryIMPL(
-        api = Retrofit.Builder()
+    val api: ApiRepository = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .baseUrl(ApiRepository.BASE_URL)
         .client(client)
         .build()
         .create(ApiRepository::class.java)
+
+    @Provides
+    fun provideProductsRepository(): ProductsRepository = ProductRepositoryIMPL(
+        api = api
     )
 }
