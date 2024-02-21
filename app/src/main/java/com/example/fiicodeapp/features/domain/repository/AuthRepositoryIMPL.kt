@@ -31,9 +31,8 @@ class AuthRepositoryIMPL @Inject constructor(
         for (i in 0..<list.size) {
             if (list[i].username == username) {
                 user.id = list[i]._id.toString()
-                user.email = list[i].username
+                user.username = list[i].username
                 user.password = list[i].password
-                user.code = list[i].username
                 break
             }
         }

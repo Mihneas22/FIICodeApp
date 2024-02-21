@@ -1,5 +1,6 @@
 package com.example.fiicodeapp.features.presentation.screens
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -28,11 +29,13 @@ import com.example.fiicodeapp.R
 import com.example.fiicodeapp.features.data.util.Resource
 import com.example.fiicodeapp.features.presentation.components.HealthAppButton
 import com.example.fiicodeapp.features.presentation.components.HealthAppTextField
+import com.example.fiicodeapp.features.presentation.viewmodels.CreateUserViewModel
 import com.example.fiicodeapp.features.presentation.viewmodels.LoginInViewModel
 import io.realm.kotlin.ext.realmListOf
 
 @Composable
 fun LoginInScreen(
+    createUserViewModel: CreateUserViewModel,
     loginInViewModel: LoginInViewModel = hiltViewModel(),
     navController: NavController
 ){
@@ -41,6 +44,7 @@ fun LoginInScreen(
     ) {
 
         val list by loginInViewModel.getUsers.collectAsState(initial = realmListOf())
+        val currentUs by createUserViewModel.getUser.collectAsState()
 
         val username = remember{
             mutableStateOf("")
@@ -111,8 +115,11 @@ fun LoginInScreen(
                     }
 
                     if(result==Resource.Succes(true)){
-                        loginInViewModel.getCurrentUser(list,username.value)
-                        navController.navigate("MainScreen")
+                        loginInViewModel.loginInUser(list,username.value,password.value)
+                        createUserViewModel.getCurrentUser(list,username.value)
+                        val result = createUserViewModel.getUser.value
+                        Log.d("CurrentUser","userData: $result")
+                        navController.navigate("ProfileScreen")
                     }
                     else{
                         Toast.makeText(context,"Invalid username or password!", Toast.LENGTH_SHORT).show()

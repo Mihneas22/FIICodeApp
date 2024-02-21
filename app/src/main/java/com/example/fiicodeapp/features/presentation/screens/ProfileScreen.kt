@@ -17,12 +17,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.fiicodeapp.features.presentation.viewmodels.CreateUserViewModel
 
-@Preview
 @Composable
-fun ProfileScreen(){
+fun ProfileScreen(
+    createUserViewModel: CreateUserViewModel
+){
+    val result = createUserViewModel.getUser.value
+
     Column(modifier = Modifier
         .fillMaxSize()) {
 
@@ -52,6 +55,7 @@ fun ProfileScreen(){
             .height(700.dp),
             color = Color(0xFF534C4C)
         ) {
+
             Column(modifier = Modifier
                 .fillMaxSize()
                 .padding(top = 10.dp)) {
