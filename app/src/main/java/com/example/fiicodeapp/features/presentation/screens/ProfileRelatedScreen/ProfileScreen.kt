@@ -27,11 +27,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.fiicodeapp.features.presentation.viewmodels.CreateUserViewModel
 
 @Composable
 fun ProfileScreen(
     createUserViewModel: CreateUserViewModel,
+    navController: NavController
 ){
     val user = createUserViewModel.getUser.value
 
@@ -87,7 +89,7 @@ fun ProfileScreen(
                         fontSize = 20.sp,
                         modifier = Modifier
                             .clickable {
-
+                                navController.navigate("DietaryPreferences")
                             }
                     )
                 }

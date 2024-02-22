@@ -14,6 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.fiicodeapp.features.presentation.screens.AuthScreen.LoginInScreen
 import com.example.fiicodeapp.features.presentation.screens.AuthScreen.SignUpScreen
 import com.example.fiicodeapp.features.presentation.screens.HomeScreen
+import com.example.fiicodeapp.features.presentation.screens.ProfileRelatedScreen.DietaryPreferences
 import com.example.fiicodeapp.features.presentation.screens.ProfileRelatedScreen.ProfileScreen
 import com.example.fiicodeapp.features.presentation.viewmodels.CreateUserViewModel
 import com.example.fiicodeapp.ui.theme.FIICodeAppTheme
@@ -43,7 +44,11 @@ class MainActivity : ComponentActivity() {
                     }
 
                     composable("ProfileScreen"){
-                        ProfileScreen(createUserViewModel = sharedViewModel)
+                        ProfileScreen(createUserViewModel = sharedViewModel,navController=navController)
+                    }
+
+                    composable("DietaryPreferences"){
+                        DietaryPreferences()
                     }
                 }
             }
