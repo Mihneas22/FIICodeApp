@@ -30,9 +30,9 @@ class MainActivity : ComponentActivity() {
                 val sharedViewModel: CreateUserViewModel = viewModel()
 
                 val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = "SignUpScreen"){
+                NavHost(navController = navController, startDestination = "LoginInScreen"){
                     composable("SignUpScreen"){
-                        SignUpScreen(navController = navController, createUserViewModel = sharedViewModel)
+                        SignUpScreen(navController = navController)
                     }
 
                     composable("HomeScreen"){

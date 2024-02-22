@@ -2,6 +2,7 @@ package com.example.fiicodeapp.features.presentation.screens.AuthScreen
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -122,6 +123,16 @@ fun LoginInScreen(
                     }
                 },
                 color = Color(0xFF464646)
+            )
+
+            Text(text = "Don't have an account?",
+                fontSize = 15.sp,
+                modifier = Modifier
+                    .clickable {
+                        navController.navigate("SignUpScreen")
+                    }
+                    .padding(top = 15.dp),
+                color = Color(0xFFE4E4E4)
             )
         }
     }

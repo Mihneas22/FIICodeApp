@@ -12,8 +12,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -28,14 +26,11 @@ import androidx.navigation.NavController
 import com.example.fiicodeapp.R
 import com.example.fiicodeapp.features.presentation.components.HealthAppButton
 import com.example.fiicodeapp.features.presentation.components.HealthAppTextField
-import com.example.fiicodeapp.features.presentation.viewmodels.CreateUserViewModel
 import com.example.fiicodeapp.features.presentation.viewmodels.SignUpViewModel
-import io.realm.kotlin.ext.realmListOf
 
 @Composable
 fun SignUpScreen(
     signUpViewModel: SignUpViewModel = hiltViewModel(),
-    createUserViewModel: CreateUserViewModel,
     navController: NavController
 ){
     Surface(modifier = Modifier.fillMaxSize(),
@@ -48,8 +43,6 @@ fun SignUpScreen(
         val password = remember{
             mutableStateOf("")
         }
-
-        val list by createUserViewModel.getUsers.collectAsState(initial = realmListOf())
 
         val context = LocalContext.current
 
@@ -121,8 +114,7 @@ fun SignUpScreen(
                     }
                     else{
                         signUpViewModel.createUser(username.value,password.value)
-                        createUserViewModel.getCurrentUser(list,username.value) //E
-                        navController.navigate("HomeScreen")
+                        navController.navigate("LoginInScreen")
                     }
                              },
                 color = Color(0xFF464646))

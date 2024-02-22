@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface AuthRepository {
     val getUsers: Flow<RealmList<User>>
-
     suspend fun getCurrentUser(list: RealmList<User>, username: String): CurrentUser
 
     suspend fun loginIn(list: RealmList<User>,username: String, password: String): Resource<Boolean>

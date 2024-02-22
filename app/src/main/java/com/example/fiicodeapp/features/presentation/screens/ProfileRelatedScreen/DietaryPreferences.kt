@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -102,7 +104,10 @@ fun DietaryPreferences(
     ) {
         Column(modifier = Modifier
             .fillMaxSize()
-            .padding( start = 20.dp)) {
+            .padding( start = 20.dp)
+            .verticalScroll(rememberScrollState())
+        ) {
+
             Row(modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Start,
                 verticalAlignment = Alignment.CenterVertically) {
@@ -354,7 +359,7 @@ fun DietaryPreferences(
                 horizontalArrangement = Arrangement.Start,
                 verticalAlignment = Alignment.CenterVertically) {
 
-                Text(text = "Without Celery:",
+                Text(text = "Without Sulphites:",
                     fontSize = 15.sp,
                     color = Color.White,
                     modifier = Modifier.padding(end = 20.dp)
