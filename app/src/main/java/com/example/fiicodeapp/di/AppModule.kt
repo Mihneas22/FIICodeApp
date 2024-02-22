@@ -1,6 +1,7 @@
 package com.example.fiicodeapp.di
 
 import com.example.fiicodeapp.features.data.repository.AuthRepository
+import com.example.fiicodeapp.features.domain.models.Allergens
 import com.example.fiicodeapp.features.domain.models.User
 import com.example.fiicodeapp.features.domain.repository.AuthRepositoryIMPL
 import dagger.Module
@@ -18,7 +19,8 @@ object AppModule {
         realm = Realm.open(
             configuration = RealmConfiguration.create(
                 schema = setOf(
-                    User::class
+                    User::class,
+                    Allergens::class
                 )
             )
         )

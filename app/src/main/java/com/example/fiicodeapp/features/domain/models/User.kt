@@ -8,5 +8,5 @@ class User: RealmObject {
     @PrimaryKey var _id: ObjectId = ObjectId()
     var username: String = ""
     var password: String = ""
-    var allergens: Allergens? = null //Va da eroare la rulare
+    var allergens: Allergens? = null
 }
