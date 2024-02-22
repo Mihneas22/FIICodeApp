@@ -1,5 +1,6 @@
 package com.example.fiicodeapp.features.presentation.screens.ProfileRelatedScreen
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,15 +20,18 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.fiicodeapp.features.domain.models.Allergens
+import com.example.fiicodeapp.features.domain.models.InAppUser.CurrentUser
 import com.example.fiicodeapp.features.presentation.components.HealthAppButton
+import com.example.fiicodeapp.features.presentation.viewmodels.CreateUserViewModel
 
-@Preview
 @Composable
 fun DietaryPreferences(
-
+    createUserViewModel: CreateUserViewModel,
+    navController: NavController,
 ){
     val radioOptionsMoluscs = listOf<Boolean>(true,false)
     var selectedOptionMoluscs by remember{
@@ -381,7 +385,32 @@ fun DietaryPreferences(
             ) {
                 HealthAppButton(text = "Save Changes",
                     onButClick = {
-
+                        val name = createUserViewModel.getUser.value.username
+                        val newUser = CurrentUser(
+                            id = createUserViewModel.getUser.value.id,
+                            username = createUserViewModel.getUser.value.username,
+                            password = createUserViewModel.getUser.value.password,
+                            allergens = Allergens().apply {
+                                moluscs=selectedOptionMoluscs
+                                eggs=selectedOptionEggs
+                                fish=selectedOptionFish
+                                lupin=selectedOptionLupin
+                                soya=selectedOptionSoya
+                                milk=selectedOptionMilk
+                                peanuts=selectedOptionPeanuts
+                                gluten=selectedOptionGluten
+                                crustaceans=selectedOptionCrustaceans
+                                mustard=selectedOptionMustard
+                                nuts=selectedOptionNuts
+                                sesame=selectedOptionSesame
+                                celery=selectedOptionCelery
+                                sulphites=selectedOptionSulphites
+                            }
+                        )
+                        Log.d("DATA","${newUser.allergens?.eggs}")
+                        //DE LUCRAT
+                        createUserViewModel.updateDataAllergens(name,newUser)
+                        navController.navigate("ProfileScreen")
                     },
                     color = Color(0xFF464646)
                 )

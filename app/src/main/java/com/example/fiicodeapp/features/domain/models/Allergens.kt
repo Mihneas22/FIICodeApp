@@ -17,6 +17,4 @@ class Allergens: EmbeddedRealmObject {
     var sesame: Boolean = false
     var celery: Boolean = false
     var sulphites: Boolean = false
-
-    var user: User? = null
 }

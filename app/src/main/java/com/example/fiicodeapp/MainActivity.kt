@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
                     }
 
                     composable("DietaryPreferences"){
-                        DietaryPreferences()
+                        DietaryPreferences(navController = navController, createUserViewModel = sharedViewModel)
                     }
                 }
             }

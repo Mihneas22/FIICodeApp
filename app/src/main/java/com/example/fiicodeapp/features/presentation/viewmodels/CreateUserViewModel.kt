@@ -36,12 +36,13 @@ class CreateUserViewModel @Inject constructor(
         getUser.value = result
     }
 
+    fun updateDataAllergens(username: String, user: CurrentUser)
+    =viewModelScope.launch{
+        getUser.value = user
+    }
+
     fun logOut(user: CurrentUser)
     =viewModelScope.launch{
         getUser.value = repository.logOut(getUser.value)
-    }
-
-    fun updateUserData(user: CurrentUser){
-        getUser.value = user
     }
 }
