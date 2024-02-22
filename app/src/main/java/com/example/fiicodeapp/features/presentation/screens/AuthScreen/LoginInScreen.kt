@@ -1,6 +1,5 @@
 package com.example.fiicodeapp.features.presentation.screens.AuthScreen
 
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -44,7 +43,6 @@ fun LoginInScreen(
     ) {
 
         val list by loginInViewModel.getUsers.collectAsState(initial = realmListOf())
-        val currentUs by createUserViewModel.getUser.collectAsState()
 
         val username = remember{
             mutableStateOf("")
@@ -117,8 +115,6 @@ fun LoginInScreen(
                     if(result==Resource.Succes(true)){
                         loginInViewModel.loginInUser(list,username.value,password.value)
                         createUserViewModel.getCurrentUser(list,username.value)
-                        val result = createUserViewModel.getUser.value
-                        Log.d("CurrentUser","userData: $result")
                         navController.navigate("HomeScreen")
                     }
                     else{
