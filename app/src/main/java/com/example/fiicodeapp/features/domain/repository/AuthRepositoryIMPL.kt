@@ -1,5 +1,6 @@
 package com.example.fiicodeapp.features.domain.repository
 
+import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import com.example.fiicodeapp.features.data.repository.AuthRepository
 import com.example.fiicodeapp.features.data.util.Resource
@@ -72,10 +73,12 @@ class AuthRepositoryIMPL @Inject constructor(
     =try{
         realm.write {
             var liveUser = query<User>("username == $username").find().first()
+            Log.d("liveUser","dataBefore: ${liveUser.username}")
             liveUser = User().apply {
                 this.allergens = user.allergens
                 copyToRealm(liveUser,UpdatePolicy.ALL)
             }
+            Log.d("liveUser","dataAfter: ${liveUser.username}")
             Resource.Succes(true)
         }
     }catch (ex: Exception){

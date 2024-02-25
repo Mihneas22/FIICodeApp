@@ -408,7 +408,6 @@ fun DietaryPreferences(
                             }
                         )
                         Log.d("DATA","${newUser.allergens?.eggs}")
-                        //DE LUCRAT
                         createUserViewModel.updateDataAllergens(name,newUser)
                         navController.navigate("ProfileScreen")
                     },
