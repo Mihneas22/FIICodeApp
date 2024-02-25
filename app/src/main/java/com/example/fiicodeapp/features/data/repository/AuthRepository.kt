@@ -15,5 +15,6 @@ interface AuthRepository {
     suspend fun signUp(username: String,password: String): Resource<Boolean>
 
     suspend fun updateDataAllergens(username: String,user: CurrentUser): Resource<Boolean>
+
     suspend fun logOut(user: CurrentUser): CurrentUser
 }

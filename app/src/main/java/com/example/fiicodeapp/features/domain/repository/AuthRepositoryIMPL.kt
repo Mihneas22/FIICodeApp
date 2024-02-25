@@ -74,7 +74,7 @@ class AuthRepositoryIMPL @Inject constructor(
             var liveUser = query<User>("username == $username").find().first()
             liveUser = User().apply {
                 this.allergens = user.allergens
-                //DE LUCRAT
+                copyToRealm(liveUser,UpdatePolicy.ALL)
             }
             Resource.Succes(true)
         }
