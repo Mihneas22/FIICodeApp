@@ -1,6 +1,5 @@
 package com.example.fiicodeapp.features.presentation.screens.ProfileRelatedScreen
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -407,7 +406,6 @@ fun DietaryPreferences(
                                 sulphites=selectedOptionSulphites
                             }
                         )
-                        Log.d("DATA","${newUser.allergens?.eggs}")
                         createUserViewModel.updateDataAllergens(name,newUser)
                         navController.navigate("ProfileScreen")
                     },

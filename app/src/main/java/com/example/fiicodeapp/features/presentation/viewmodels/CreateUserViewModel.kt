@@ -40,9 +40,4 @@ class CreateUserViewModel @Inject constructor(
     =viewModelScope.launch{
         repository.updateDataAllergens(username,user)
     }
-
-    fun logOut(user: CurrentUser)
-    =viewModelScope.launch{
-        getUser.value = repository.logOut(getUser.value)
-    }
 }
