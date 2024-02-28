@@ -32,6 +32,8 @@ fun DietaryPreferences(
     createUserViewModel: CreateUserViewModel,
     navController: NavController,
 ){
+    val user = createUserViewModel.getUser.value
+
     val radioOptionsMoluscs = listOf<Boolean>(true,false)
     var selectedOptionMoluscs by remember{
         mutableStateOf(radioOptionsMoluscs[0])
@@ -406,6 +408,21 @@ fun DietaryPreferences(
                                 sulphites=selectedOptionSulphites
                             }
                         )
+                        createUserViewModel.getUser.value.allergens?.moluscs = selectedOptionMoluscs
+                        createUserViewModel.getUser.value.allergens?.eggs = selectedOptionEggs
+                        createUserViewModel.getUser.value.allergens?.fish = selectedOptionFish
+                        createUserViewModel.getUser.value.allergens?.lupin = selectedOptionLupin
+                        createUserViewModel.getUser.value.allergens?.soya = selectedOptionSoya
+                        createUserViewModel.getUser.value.allergens?.milk = selectedOptionMilk
+                        createUserViewModel.getUser.value.allergens?.peanuts = selectedOptionPeanuts
+                        createUserViewModel.getUser.value.allergens?.gluten = selectedOptionGluten
+                        createUserViewModel.getUser.value.allergens?.crustaceans = selectedOptionCrustaceans
+                        createUserViewModel.getUser.value.allergens?.mustard = selectedOptionMustard
+                        createUserViewModel.getUser.value.allergens?.nuts = selectedOptionNuts
+                        createUserViewModel.getUser.value.allergens?.sesame = selectedOptionSesame
+                        createUserViewModel.getUser.value.allergens?.celery = selectedOptionCelery
+                        createUserViewModel.getUser.value.allergens?.sulphites = selectedOptionSulphites
+
                         createUserViewModel.updateDataAllergens(name,newUser)
                         navController.navigate("ProfileScreen")
                     },

@@ -72,8 +72,8 @@ class AuthRepositoryIMPL @Inject constructor(
     override suspend fun updateDataAllergens(username: String, user: CurrentUser): Resource<Boolean>
     =try{
         realm.write {
-            val liveUser = realm.query<User>("username == $0",username).find().first()
-            liveUser.username="Mihnea22"
+            val liveUser = this.query<User>("username == $0",username).find().first()
+            liveUser.allergens = user.allergens
         }
         Resource.Succes(true)
     }catch (ex: Exception) {
