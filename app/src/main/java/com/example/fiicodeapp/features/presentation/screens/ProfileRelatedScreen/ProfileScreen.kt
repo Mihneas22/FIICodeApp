@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Approval
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Fastfood
 import androidx.compose.material.icons.filled.PersonOutline
@@ -127,6 +128,27 @@ fun ProfileScreen(
                     )
 
                     Text(text = "Explore the most asked questions and some information about the app!",
+                        fontSize = 20.sp,
+                        modifier = Modifier
+                            .padding(start = 10.dp)
+                            .clickable {
+
+                            }
+                    )
+                }
+
+                //Added Products
+                Row(modifier = Modifier
+                    .fillMaxWidth()
+                    .height(90.dp)
+                    .padding(top = 10.dp)
+                ) {
+                    Icon(imageVector = Icons.Default.Approval,
+                        contentDescription = "Icon",
+                        modifier = Modifier.size(70.dp).padding(start = 10.dp)
+                    )
+
+                    Text(text = "Check for you added products!",
                         fontSize = 20.sp,
                         modifier = Modifier
                             .padding(start = 10.dp)
