@@ -100,4 +100,6 @@ dependencies {
     //Json
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
+   // Open Food Facts Api Java Wrapper
+    implementation("pl.coderion:openfoodfacts-java-wrapper:0.9.3")
 }
