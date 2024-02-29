@@ -74,7 +74,7 @@ dependencies {
     // Compose dependencies
     implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation ("androidx.navigation:navigation-compose:2.7.7")
-    implementation ("androidx.hilt:hilt-navigation-compose:1.1.0")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     // Coroutines
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
@@ -82,8 +82,8 @@ dependencies {
 
 
     //Dagger and Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    implementation("com.google.dagger:hilt-android:2.49")
+    kapt("com.google.dagger:hilt-android-compiler:2.49")
 
     //Realm
     implementation("io.realm.kotlin:library-base:1.11.0")
