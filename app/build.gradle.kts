@@ -89,18 +89,11 @@ dependencies {
     //Realm
     implementation("io.realm.kotlin:library-base:1.11.0")
 
-    // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.11.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
-
-    // Coil
-    implementation("io.coil-kt:coil-compose:2.4.0")
-
-    //Json
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-
-   // Open Food Facts Api Java Wrapper
+    /*configurations.all{
+        resolutionStrategy{
+            force(implementation("pl.coderion:openfoodfacts-java-wrapper:0.9.3"))
+        }
+           // Open Food Facts Api Java Wrapper
+     */
     implementation("pl.coderion:openfoodfacts-java-wrapper:0.9.3")
 }
