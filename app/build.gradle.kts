@@ -71,6 +71,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation ("androidx.compose.material:material-icons-extended")
     implementation("com.android.support:support-v4:28.0.0")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.9.20"))
 
     // Compose dependencies
     implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
