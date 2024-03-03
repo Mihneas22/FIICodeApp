@@ -113,8 +113,12 @@ dependencies {
         exclude("org.apache.commons", "commons-lang3")
         exclude("org.reactivestreams", "reactive-streams")
         exclude("org.slf4j", "slf4j-api")
-        exclude("com.google.code.findbugs", "jsr305")
-        exclude("javax.inject", "javax.inject")
-        exclude("javax.annotation", "javax.annotation-api")
+        exclude("javax.annotation","javax.annotation-api")
+        configurations.all {
+            resolutionStrategy{
+                exclude("com.google.code.findbugs","jsr305")
+                exclude("javax.inject","javax.inject")
+            }
+        }
     }
 }
