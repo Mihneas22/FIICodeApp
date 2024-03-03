@@ -89,11 +89,32 @@ dependencies {
     //Realm
     implementation("io.realm.kotlin:library-base:1.11.0")
 
-    /*configurations.all{
-        resolutionStrategy{
-            force(implementation("pl.coderion:openfoodfacts-java-wrapper:0.9.3"))
-        }
-           // Open Food Facts Api Java Wrapper
-     */
-    implementation("pl.coderion:openfoodfacts-java-wrapper:0.9.3")
+    implementation("pl.coderion:openfoodfacts-java-wrapper:0.9.3"){
+        exclude("io.netty", "netty-codec")
+        exclude("io.netty","netty-transport")
+        exclude("io.netty","netty-buffer")
+        exclude("io.netty", "netty-codec-http")
+        exclude("io.netty", "netty-codec-socks")
+        exclude("io.micronaut","micronaut-router")
+        exclude("io.micronaut","micronaut-validation")
+        exclude("io.micronaut","micronaut-context")
+        exclude("io.micronaut","micronaut-runtime")
+        exclude("io.micronaut","micronaut-websocket")
+        exclude("io.micronaut","micronaut-http-netty")
+        exclude("io.micronaut","micronaut-http-server-netty")
+        exclude("io.micronaut","micronaut-http")
+        exclude("io.micronaut","micronaut-http-client")
+        exclude("io.micronaut","micronaut-core")
+        exclude("io.micronaut","micronaut-inject")
+        exclude("io.micronaut","micronaut-http-client-core")
+        exclude("ch.qos.logback", "logback-classic")
+        exclude("ch.qos.logback", "logback-core")
+        exclude("org.slf4j", "slf4j-api")
+        exclude("org.apache.commons", "commons-lang3")
+        exclude("org.reactivestreams", "reactive-streams")
+        exclude("org.slf4j", "slf4j-api")
+        exclude("com.google.code.findbugs", "jsr305")
+        exclude("javax.inject", "javax.inject")
+        exclude("javax.annotation", "javax.annotation-api")
+    }
 }
